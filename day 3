@@ -1,0 +1,21 @@
+//day 3
+//1291. Sequential Digits
+class Solution {
+public:
+    vector<int> sequentialDigits(int low, int high) {      //program given code
+        string s = "123456789";            //initializing the string            //as the consicative string will be from the range 1-9
+        vector<int> ans;                // making vectors of int
+        for (int i = 0; i < s.size(); i++) {
+            string x = "";
+            for (int j = i; j < s.size(); j++) {
+                x += s[j];
+                int num = stoi(x);            //convert string to int
+                if (low <= num && num <= high) {
+                    ans.push_back(num);
+                }
+            }
+        }
+        sort(ans.begin(), ans.end());
+        return ans;
+    }
+};
